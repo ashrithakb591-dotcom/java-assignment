@@ -1,0 +1,37 @@
+// Method Overloading Example
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {   // Overloaded method
+        return a + b + c;
+    }
+}
+
+// Method Overriding Example
+class Parent {
+    void show() {
+        System.out.println("Parent class method.");
+    }
+}
+
+class Child extends Parent {
+    @Override
+    void show() {   // Overridden method
+        System.out.println("Child class method.");
+    }
+}
+
+public class OverloadOverrideDemo {
+    public static void main(String[] args) {
+        // Overloading
+        Calculator calc = new Calculator();
+        System.out.println("Sum: " + calc.add(5, 10));
+        System.out.println("Sum: " + calc.add(5, 10, 15));
+
+        // Overriding
+        Parent obj = new Child();
+        obj.show();
+    }
+}
