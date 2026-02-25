@@ -1,43 +1,14 @@
-class BankAccount {
-    private String accountNumber;
-    private double balance;
+public class FactorialRecursion {
 
-    // Constructor
-    public BankAccount(String accountNumber, double balance) {
-        this.accountNumber = accountNumber;
-        this.balance = balance;
-    }
-
-    // Getter for balance
-    public double getBalance() {
-        return balance;
-    }
-
-    // Deposit method
-    public void deposit(double amount) {
-        if (amount > 0) {
-            balance += amount;
-            System.out.println("Deposited: " + amount);
+    public static long factorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
         }
+        return n * factorial(n - 1);
     }
 
-    // Withdraw method
-    public void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
-            balance -= amount;
-            System.out.println("Withdrawn: " + amount);
-        } else {
-            System.out.println("Insufficient balance.");
-        }
-    }
-}
-
-public class BankDemo {
     public static void main(String[] args) {
-        BankAccount account = new BankAccount("12345", 1000);
-
-        account.deposit(500);
-        account.withdraw(300);
-        System.out.println("Current Balance: " + account.getBalance());
+        int number = 5;
+        System.out.println("Factorial of " + number + " is: " + factorial(number));
     }
 }

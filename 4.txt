@@ -1,37 +1,30 @@
-// Method Overloading Example
-class Calculator {
-    int add(int a, int b) {
-        return a + b;
+class Student {
+    String name;
+    int age;
+
+    // Default constructor
+    Student() {
+        name = "Unknown";
+        age = 0;
     }
 
-    int add(int a, int b, int c) {   // Overloaded method
-        return a + b + c;
+    // Parameterized constructor
+    Student(String n, int a) {
+        name = n;
+        age = a;
     }
-}
 
-// Method Overriding Example
-class Parent {
-    void show() {
-        System.out.println("Parent class method.");
-    }
-}
-
-class Child extends Parent {
-    @Override
-    void show() {   // Overridden method
-        System.out.println("Child class method.");
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
     }
 }
 
-public class OverloadOverrideDemo {
+public class ConstructorDemo {
     public static void main(String[] args) {
-        // Overloading
-        Calculator calc = new Calculator();
-        System.out.println("Sum: " + calc.add(5, 10));
-        System.out.println("Sum: " + calc.add(5, 10, 15));
+        Student s1 = new Student();                // Default constructor
+        Student s2 = new Student("Alice", 20);    // Parameterized constructor
 
-        // Overriding
-        Parent obj = new Child();
-        obj.show();
+        s1.display();
+        s2.display();
     }
 }

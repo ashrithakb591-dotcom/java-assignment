@@ -1,19 +1,27 @@
-class Animal {
-    void eat() {
-        System.out.println("Animal is eating.");
-    }
-}
+public class PalindromeCheck {
 
-class Dog extends Animal {
-    void bark() {
-        System.out.println("Dog is barking.");
-    }
-}
+    public static boolean isPalindrome(String str) {
+        str = str.toLowerCase();
+        int left = 0;
+        int right = str.length() - 1;
 
-public class InheritanceDemo {
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
-        Dog d = new Dog();
-        d.eat();   // Inherited method
-        d.bark();  // Dog's own method
+        String word = "Madam";
+
+        if (isPalindrome(word)) {
+            System.out.println(word + " is a palindrome.");
+        } else {
+            System.out.println(word + " is not a palindrome.");
+        }
     }
 }
