@@ -1,0 +1,15 @@
+final class FinalClass {
+    final int x = 10;   // final variable
+
+    final void display() {   // final method
+        System.out.println("Final method");
+    }
+}
+
+public class FinalDemo {
+    public static void main(String[] args) {
+        FinalClass obj = new FinalClass();
+        obj.display();
+        // obj.x = 20;  ❌ Error (cannot change final variable)
+    }
+}
